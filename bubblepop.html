@@ -1,0 +1,269 @@
+<html>
+<head>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Aidxiety</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous">
+	</script>
+    <link rel="icon" href="assets/img/logo1.png">
+	<link href="css/styles.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/heading.css">
+	<link rel="stylesheet" href="css/body.css">
+  <link rel="stylesheet" href="css/subpages.css">
+<script 
+src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script>
+<script>
+function start(){
+  sjs.open("target", 1280,500);
+//greenball
+  var greenball = new sjs.Image("game1/green.png");
+  greenball.type = "ball";
+  greenball.setSize(50,50);
+  greenball.center(100,100);
+  greenball.friction = 0
+  greenball.bounce();
+  greenball.pushLeft(3);
+  greenball.pushDown(4);
+  //greenball1
+  var greenball1 = new sjs.Image("game1/green.png");
+  greenball1.type = "ball";
+  greenball1.setSize(50,50);
+  greenball1.centerAt(100,10);
+  greenball1.friction = 0
+  greenball1.bounce();
+  greenball1.pushRight(3);
+  greenball1.pushUp(4);
+    //redball
+  var redball = new sjs.Image("game1/red.png");
+  redball.type = "ball";
+  redball.setSize(50,50);
+  redball.centerAt(400,370);
+  redball.friction = 0
+  redball.bounce();
+  redball.pushRight(3);
+  redball.pushUp(4);
+  //redball1
+  var redball1 = new sjs.Image("game1/red.png");
+  redball1.type = "ball";
+  redball1.setSize(50,50);
+  redball1.centerAt(200,370);
+  redball1.friction = 0
+  redball1.bounce();
+  redball1.pushRight(3);
+  redball1.pushDown(4);
+  //orangeball
+  var orangeball = new sjs.Image("game1/orange.png");
+  orangeball.type = "ball";
+  orangeball.setSize(50,50);
+  orangeball.centerAt(250,400);
+  orangeball.friction = 0
+  orangeball.bounce();
+  orangeball.pushRight(3);
+  orangeball.pushDown(4);
+  //orangeball1
+  var orangeball1 = new sjs.Image("game1/orange.png");
+  orangeball1.type = "ball";
+  orangeball1.setSize(50,50);
+  orangeball1.centerAt(150,400);
+  orangeball1.friction = 0
+  orangeball1.bounce();
+  orangeball1.pushLeft(3);
+  orangeball1.pushDown(4);
+  //yellowball
+  var yellowball = new sjs.Image("game1/yellow.png");
+  yellowball.type = "ball";
+  yellowball.setSize(50,50);
+  yellowball.centerAt(50,50);
+  yellowball.friction = 0
+  yellowball.bounce();
+  yellowball.pushLeft(3);
+  yellowball.pushDown(4);
+  //yellowball1
+  var yellowball1 = new sjs.Image("game1/yellow.png");
+  yellowball1.type = "ball";
+  yellowball1.setSize(50,50);
+  yellowball1.centerAt(80,100);
+  yellowball1.friction = 0
+  yellowball1.bounce();
+  yellowball1.pushRight(3);
+  yellowball1.pushDown(4);
+  //blueball
+  var blueball = new sjs.Image("game1/blue.png");
+  blueball.type = "ball";
+  blueball.setSize(50,50);
+  blueball.centerAt(100,300);
+  blueball.friction = 0
+  blueball.bounce();
+  blueball.pushRight(3);
+  blueball.pushUp(4);
+  //blueball1
+  var blueball1 = new sjs.Image("game1/blue.png");
+  blueball1.type = "ball";
+  blueball1.setSize(50,50);
+  blueball1.centerAt(300,250);
+  blueball1.friction = 0
+  blueball1.bounce();
+  blueball1.pushRight(3);
+  blueball1.pushUp(4);
+  //purpleball
+  var purpleball = new sjs.Image("game1/purple.png");
+  id = "ball";
+  purpleball.type = "ball";
+  purpleball.setSize(50,50);
+  purpleball.centerAt(400,300);
+  purpleball.friction = 0
+  purpleball.bounce();
+  purpleball.pushRight(3);
+  purpleball.pushUp(4);
+  //purpleball1
+  var purpleball1 = new sjs.Image("game1/purple.png");
+  id = "ball";
+  purpleball1.type = "ball";
+  purpleball1.setSize(50,50);
+  purpleball1.centerAt(100,200);
+  purpleball1.friction = 0
+  purpleball1.bounce();
+  purpleball1.pushRight(3);
+  purpleball1.pushUp(4);
+  //pop noise
+  var soundEffect = new Audio('game1/pop.mp3');
+  //Score
+  var score = 0;
+  var score_txt = new sjs.Text("Score: 0", 31, "black", "sans-serif");  
+  score_txt.moveTo(30,0);
+  //click ball -> disappear + make noise
+  redball.onMouseDown(function(){
+    redball.hide();
+    soundEffect.play();
+    score = score + 1;
+    console.log(score);
+    score_txt.setText("Score: "+score);
+  });
+  redball1.onMouseDown(function(){
+    redball1.hide();
+    soundEffect.play();
+    score = score + 1;
+    console.log(score);
+    score_txt.setText("Score: "+score);
+  });
+  orangeball.onMouseDown(function(){
+    orangeball.hide();
+    soundEffect.play();
+    score = score + 1;
+    console.log(score);
+    score_txt.setText("Score: "+score);
+  });
+  orangeball1.onMouseDown(function(){
+    orangeball1.hide();
+    soundEffect.play();
+    score = score + 1;
+    console.log(score);
+    score_txt.setText("Score: "+score);
+  });
+  yellowball.onMouseDown(function(){
+    yellowball.hide();
+    soundEffect.play();
+    score = score + 1;
+    console.log(score);
+    score_txt.setText("Score: "+score);
+  });
+  yellowball1.onMouseDown(function(){
+    yellowball1.hide();
+    soundEffect.play();
+    score = score + 1;
+    console.log(score);
+    score_txt.setText("Score: "+score);
+  });
+  greenball.onMouseDown(function(){
+    greenball.hide();
+    soundEffect.play();
+    score = score + 1;
+    console.log(score);
+    score_txt.setText("Score: "+score);
+  });
+  greenball1.onMouseDown(function(){
+    greenball1.hide();
+    soundEffect.play();
+    score = score + 1;
+    console.log(score);
+    score_txt.setText("Score: "+score);
+  });
+  blueball.onMouseDown(function(){
+    blueball.hide();
+    soundEffect.play();
+    score = score + 1;
+    console.log(score);
+    score_txt.setText("Score: "+score);
+  });
+  blueball1.onMouseDown(function(){
+    blueball1.hide();
+    soundEffect.play();
+    score = score + 1;
+    console.log(score);
+    score_txt.setText("Score: "+score);
+  });
+  purpleball.onMouseDown(function(){
+    purpleball.hide();
+    soundEffect.play();
+    score = score + 1;
+    console.log(score);
+    score_txt.setText("Score: "+score);
+  });
+  purpleball1.onMouseDown(function(){
+    purpleball1.hide();
+    soundEffect.play();
+    score = score + 1;
+    console.log(score);
+    score_txt.setText("Score: "+score);
+  }); 
+  };//end start
+</script>
+</head>
+<body id="page-top">
+<nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+		<div class="container"><a class="navbar-brand js-scroll-trigger" href="index.html">Aidxiety</a>
+			<button class="navbar-toggler navbar-toggler-right font-weight-bold bg-secondary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.html">HOME</a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="relax.html">RELAX</a>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="play.html">PLAY</a>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="schedule.html">SCHEDULE</a>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="blog.html">VENT</a>
+                        </li></ul></div></div></nav>
+<body onload="start();"  style="margin:auto;">
+  <div class="intro">
+  <br><br><br><br><br><br>
+  <h1 class="masthead-heading mb-0 text-dark">Play</h1>
+  <div class="divider-custom divider-light">
+  <div class="divider-custom-line"></div>
+  <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+  <div class="divider-custom-line"></div>
+  </div>
+  <p>Directions: Click the bubbles to pop them!</p><br><br></div>
+<div id="target" class="game" style="background-image: url(game1/sky.png); background-repeat: no-repeat; background-size: 100% 100%;"></div>
+<footer class="footer text-center">
+            <div class="container">
+              <div class="text-center">
+                    <h2 class="page-section-heading text-dark d-inline-block mb-0">CONTACT</h2><br><br></div>
+                <div class="row">
+                    <!-- Footer Location-->
+                   <div class="col-lg-4">
+                        <div class="d-flex flex-column align-items-center">
+                            <div class="text-secondary">Email</div><a class="text-secondary" href="mailto:aidxiety@gmail.com"></a> </div></div>
+                   <div class="col-lg-4">
+                        <div class="d-flex flex-column align-items-center">
+                            <div class="icon-contact mb-3"><i class="far fa-envelope"></i></div>
+                            <div class="text-muted">Email</div><a class="lead font-weight-bold text-dark" href="mailto:aidxiety@gmail.com">aidxiety@gmail.com</a></div></div></div></div></footer>
+        <section class="copyright py-4 text-center text-white">
+            <div class="container"><small class="pre-wrap">Copyright © Aidxiety 2020</small></div>
+        </section>
+        <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="assets/mail/jqBootstrapValidation.js"></script>
+        <script src="assets/mail/contact_me.js"></script>
+        <script src="js/scripts.js"></script>
+</html>

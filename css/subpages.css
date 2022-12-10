@@ -1,0 +1,78 @@
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+.head {
+  background-color: #cff9fc;
+}
+.scheduler {
+  text-align: center;
+  background-color: white;
+  font-size: 18px;
+  padding-top: 50px;
+  padding-right: 250px;
+  padding-bottom: 50px;
+  padding-left: 250px;
+}
+
+.btn {
+  border-radius: 30px;
+}
+
+.row {
+  text-align: center;
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-bottom: 50px;
+}
+
+.intro {
+  text-align: center;
+  background-color: #cff9fc;
+  font-size: 20px;
+  padding-top: 80px;
+  padding-right: 250px;
+  padding-bottom: 80px;
+  padding-left: 250px;
+}
+.music, .game {
+  text-align: center;
+}
+
+/* Three columns side by side */
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+.container11 {
+  padding: 0 16px;
+}
+
+.container1::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}

@@ -1,0 +1,111 @@
+<html>
+<head>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Aidxiety</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous">
+	</script>
+    <link rel="icon" href="assets/img/logo1.png">
+	<link href="css/styles.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/heading.css">
+	<link rel="stylesheet" href="css/body.css">
+  <link rel="stylesheet" href="css/subpages.css">
+<script 
+src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script>
+<script>
+function start(){
+	sjs.open("target",600,500);
+	//ball
+	var ball= new sjs.Image("game2/2.png");
+	ball.type="ball";
+	ball.setSize(50,50);
+	ball.centerAt(550,450);
+	ball.friction = 0;
+	ball.bounce();
+	ball.pushRight(3);
+	ball.pushUp(4);
+	//box #1
+	var box1= new sjs.Image("game2/1.png");
+	box1.type="box";
+	box1.centerH();
+	box1.setSize(100,20);
+	box1.friction = 0.2;
+	//Paddle #2
+	var box2= new sjs.Image("game2/1.png");
+	box2.type="box";
+	box2.center().bottom();
+	box2.setSize(100,20);
+	box2.friction = 0.2;
+	//Score
+	var score = 0;
+	var score_txt = new sjs.Text("Score:0", 31, "black", "sans-serif");
+  score_txt.moveTo(30,0);
+	//paddle controls
+	sjs.keyDown(LEFT_KEY, function(){
+	box1.pushLeft();
+	box2.pushLeft();	
+	});
+	sjs.keyDown(RIGHT_KEY, function(){
+	box1.pushRight();
+	box2.pushRight();
+	});
+	//sounds
+	var soundEffect = new Audio('game1/pop.mp3');
+	sjs.onHit("ball","box", function(ball,box){
+		score = score + 1;
+		score_txt.setText("Score: "+score);
+		soundEffect.play();
+		sjs.bounceOff(ball,box);
+	});
+	sjs.onHit("ball",["top_screen","bottom_screen"], function(){
+		window.location = "gameover1.html";
+	});	
+} //end start
+</script>
+</head>
+<body  onload="start();"  style="margin:auto;">
+<nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+		<div class="container"><a class="navbar-brand js-scroll-trigger" href="index.html">Aidxiety</a>
+			<button class="navbar-toggler navbar-toggler-right font-weight-bold bg-secondary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.html">HOME</a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="relax.html">RELAX</a>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="play.html">PLAY</a>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="schedule.html">SCHEDULE</a>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="blog.html">VENT</a></li></ul></div></div></nav>
+  <div class="intro">
+  <br><br><br><br><br><br>
+  <h1 class="masthead-heading mb-0 text-dark">Play</h1>
+  <div class="divider-custom divider-light">
+  <div class="divider-custom-line"></div>
+  <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+  <div class="divider-custom-line"></div>
+  </div>
+  <p>Directions: Move the paddles with the arrows and don't let the ball touch the walls!</p><br><br>
+</div>
+<div id="target" style="margin:auto;background:#f8f3ff;"></div>
+<footer class="footer text-center">
+            <div class="container">
+              <div class="text-center">
+                    <h2 class="page-section-heading text-dark d-inline-block mb-0">CONTACT</h2><br><br></div>
+                <div class="row">
+                   <div class="col-lg-4">
+                        <div class="d-flex flex-column align-items-center">
+                            <div class="text-secondary">Email</div><a class="text-secondary" href="mailto:aidxiety@gmail.com"></a> </div></div>
+                   <div class="col-lg-4">
+                        <div class="d-flex flex-column align-items-center">
+                            <div class="icon-contact mb-3"><i class="far fa-envelope"></i></div>
+                            <div class="text-muted">Email</div><a class="lead font-weight-bold text-dark" href="mailto:aidxiety@gmail.com">aidxiety@gmail.com</a> </div></div></div> </div></footer>
+        <section class="copyright py-4 text-center text-white">
+            <div class="container"><small class="pre-wrap">Copyright © Aidxiety 2020</small></div>
+        </section>
+        <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="assets/mail/jqBootstrapValidation.js"></script>
+        <script src="assets/mail/contact_me.js"></script>
+        <script src="js/scripts.js"></script>
+</html>
